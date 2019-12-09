@@ -1,0 +1,4 @@
+microservice-provider-user:
+  ribbon:
+    #配置负载均衡规则为随机
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

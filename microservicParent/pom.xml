@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.springcloud.test</groupId>
+    <artifactId>microservice-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>provider/userservice</module>
+        <module>consumer/movie</module>
+        <module>discovery/eureka</module>
+        <module>discovery/eureka-ha</module>
+        <module>discovery/eureka-auth</module>
+        <module>provider/userServiceTwo</module>
+        <module>consumer/movie-metadata</module>
+        <module>consumer/movie-Ribbon</module>
+        <module>consumer/movie-ribbon-customizing</module>
+        <module>consumer/movie-ribbon-customizing-properties</module>
+        <module>consumer/moive-ribbon-without-eureka</module>
+        <module>consumer/movie-feign</module>
+        <module>consumer/movie-feign-customzing</module>
+        <module>provider/user-with-auth</module>
+        <module>consumer/movie-feign-manual</module>
+        <module>consumer/movie-feign-manual</module>
+        <module>consumer/movie-ribbon-hystrix</module>
+        <module>consumer/movie-feign-hystrix</module>
+        <module>consumer/movie-feign-hystrix-fallback-factory</module>
+        <module>hystrix/hystrix-dashboard</module>
+        <module>hystrix/hystrix-turbine</module>
+        <module>gateway/zuul</module>
+        <module>configServer</module>
+        <module>configServer/git-config-server</module>
+        <module>configServer/git-config-server</module>
+        <module>configServer/git-config-server</module>
+        <module>configServer/springcloud-config-server</module>
+        <module>configServer/configClient</module>
+        <module>configServer/config-client-refresh</module>
+        <module>provider/provider-user-trace</module>
+    </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

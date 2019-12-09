@@ -1,0 +1,33 @@
+server:
+  port: 8002
+  context-path: /provider
+spring:
+  application:
+    name: microservice-provider-user-metadata
+    #下面这段配置是让访问该服务的客户忽略docker0网卡以及以veth开头的网卡
+    #cloud.inetutils.ignored-interfaces.useOnlySiteLocalInterfaces=true  这个配置的作用只使用站点本地地址
+#  cloud:
+#    inetutils:
+#      ignored-interfaces:
+#        - docker0
+#        - veth.*
+#      preferred-networks:
+#        - 192.168
+#        - 10.0
+
+logging:
+  level:
+    root: INFO
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      #eureka.client.healthcheck.enable=true的作用是将客户端健康状态传递给eureka服务端，因为eureka服务器检测到客户端注册的服务状态为Up时不一定能访问
+    healthcheck:
+      enable: true
+  instance:
+    #该配置项表示将自己IP注册到EurekaServer,若不配置该属性或将其设置为false，则表示注册微服务所在操作系统的hostname到Eureka Server.
+    prefer-ip-address: true
+    metadata-map:
+    #自定义元数据，key/value都可以随便写
+      my-metadata:  我自定义的元数据

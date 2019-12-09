@@ -1,0 +1,27 @@
+server:
+  port: 8763
+logging:
+  level:
+    root: INFO
+eureka:
+  client:
+    #是否将自己注册到eureka
+    #register-with-eureka: false
+    #是否从eureka获取注册信息
+    #fetch-registry: false
+    #设置eureka的交互地址
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8763/eureka/
+  instance:
+    hostname: peer2
+spring:
+  application:
+    name: microservice-discovery-eureka-auth
+
+#这段配置没有生效，经查找原因为版本过高
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password123

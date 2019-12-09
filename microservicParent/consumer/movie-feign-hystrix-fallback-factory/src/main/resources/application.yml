@@ -1,0 +1,18 @@
+server:
+  port: 8011
+  context-path: /consumer
+spring:
+  application:
+    name: microservice-consumer-movie-feign-hystrix-fallback-factory
+logging:
+  level:
+    root: INFO
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+  instances:
+    prefer-ip-address: true
+feign:
+  hystrix:
+    enabled: true

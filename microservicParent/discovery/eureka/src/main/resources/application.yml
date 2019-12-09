@@ -1,0 +1,22 @@
+server:
+  port: 8761
+logging:
+  level:
+    root: INFO
+spring:
+  application:
+    name: microservice-discovery-eureka
+eureka:
+  client:
+    #是否将自己注册到eureka
+    #register-with-eureka: true
+    #是否从eureka获取注册信息
+    #fetch-registry: false
+    #设置eureka的交互地址
+    serviceUrl:
+      #将自己注册到8672Eureka服务上
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: peer1
+
+
